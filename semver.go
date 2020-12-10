@@ -358,7 +358,7 @@ func Parse(s string) (Version, error) {
 
 // MustParse is like Parse but panics if the version cannot be parsed.
 func MustParse(s string) Version {
-	v, err := Parse(s)
+	v, err := ParseTolerant(s)
 	if err != nil {
 		panic(`semver: Parse(` + s + `): ` + err.Error())
 	}
